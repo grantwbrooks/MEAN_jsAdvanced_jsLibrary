@@ -16,7 +16,11 @@
                 return mapped;
             },
             reduce: function(arr, callback, memo) {
-                var total = memo;
+                var total;
+                if(memo){
+                    total = memo;
+                }
+                else{total = 0};
                 for(var i=0;i<arr.length; i++){
                     total = callback(total, arr[i]);
                 }
